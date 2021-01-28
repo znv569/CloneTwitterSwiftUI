@@ -15,6 +15,7 @@ struct TwitterSiwftUIApp: App {
     
     init(){
         FirebaseApp.configure()
+        ptint("Проиницилизировано")
     }
     
     var body: some Scene {
