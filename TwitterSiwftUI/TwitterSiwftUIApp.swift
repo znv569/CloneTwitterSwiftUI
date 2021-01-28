@@ -15,7 +15,16 @@ struct TwitterSiwftUIApp: App {
     
     init(){
         FirebaseApp.configure()
+<<<<<<< HEAD
         print("main branch")
+=======
+        print("Проиницилизировано")
+        print("BugFix commit")
+    }
+    
+    func newFunt(){
+    
+>>>>>>> BugFicks
     }
     
     var body: some Scene {
