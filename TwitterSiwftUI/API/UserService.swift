@@ -26,6 +26,8 @@ class UserService {
     
     func fetchUser(_ uid: String? = nil, compleation: @escaping(User)->Void){
         
+        print("Инициализация пользователя")
+        
         var uidQuery: String? = nil
         
         if let uid = uid {
