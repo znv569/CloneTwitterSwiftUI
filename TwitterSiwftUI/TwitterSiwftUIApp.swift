@@ -15,7 +15,7 @@ struct TwitterSiwftUIApp: App {
     
     init(){
         FirebaseApp.configure()
-        print("Проиницилизировано")
+        print("main branch")
     }
     
     var body: some Scene {
