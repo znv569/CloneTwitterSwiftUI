@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
  
+//model the tweet
 class Tweet: Identifiable, ObservableObject {
     @Published var user: User
     @Published var likes: Int
