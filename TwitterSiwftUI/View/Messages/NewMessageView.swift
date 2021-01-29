@@ -15,6 +15,7 @@ struct NewMessageView: View {
     
     init(show: Binding<Bool>)
     {
+        print("new Prints")
         self._show = show
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         UINavigationBar.appearance().backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
