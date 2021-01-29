@@ -8,26 +8,48 @@
 import SwiftUI
 
 struct NewMessageView: View {
-    @State var searchText = ""
-    @Binding var show: Bool
-
     
+    @Binding var show: Bool
     @ObservedObject var viewModel = SearchViewModel()
     
+    
+    init(show: Binding<Bool>)
+    {
+        self._show = show
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        UINavigationBar.appearance().backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().isOpaque = true
+        UINavigationBar.appearance().barStyle = .default
+    }
+    
     var body: some View {
-        ScrollView{
-            SearchBar(text: $searchText, placeholder: "Search user")
-            VStack{
-                
-                ForEach(viewModel.users) { user in
-                  
-                    UserCellNewChatView(user: user)
-                   
+        NavigationView{
+            ScrollView{
+                SearchBar(text: $viewModel.searchText, placeholder: "Search user")
+                VStack{
+                    
+                    ForEach(viewModel.users) { user in
+                      
+                        UserCellNewChatView(user: user)
+                       
+                    }
                 }
+               
             }
-           
+            .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
+       
+            .navigationBarItems(trailing: Button(action: {
+                show.toggle()
+            }, label: {
+                Image(systemName: "xmark")
+                    .resizable()
+                    .frame(width: 18, height: 18, alignment: .center)
+                    .foregroundColor(.black)
+            }))
         }
-        .navigationTitle("Search")
+       
     }
 }
 

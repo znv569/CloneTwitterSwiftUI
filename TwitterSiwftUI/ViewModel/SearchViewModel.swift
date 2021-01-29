@@ -17,7 +17,7 @@ class SearchViewModel: ObservableObject {
     @Published var users = [User]()
     
     var searchText: String = ""{
-        didSet{ print(searchText) }
+        didSet{ fetchUsers(query: searchText) }
     }
     
     init() {
@@ -28,8 +28,9 @@ class SearchViewModel: ObservableObject {
     
     
     
-    func fetchUsers(){
-        UserService.shared.fetchUsers { (users) in
+    func fetchUsers(query: String? = nil){
+        
+        UserService.shared.fetchUsers (query: searchText.lowercased()){ (users) in
             self.users = users
         }
     }

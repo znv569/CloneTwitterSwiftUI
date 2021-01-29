@@ -70,9 +70,18 @@ class UserService {
     
     
     
-    func fetchUsers(compleation: @escaping([User])->Void){
+    func fetchUsers(query: String? = nil, compleation: @escaping([User])->Void){
         
-        USERS_REF.getDocuments { (snapshot, _) in
+        var dbQuery: Query
+        
+        if let query = query, query != "" {
+            
+            dbQuery = USERS_REF.whereField("username", isGreaterThanOrEqualTo:  "\(query)").whereField("username", isLessThanOrEqualTo:  "\(query)~")
+        }else{
+            dbQuery = USERS_REF
+        }
+        
+        dbQuery.getDocuments { (snapshot, _) in
             guard let snapshot = snapshot else { return }
             
             
