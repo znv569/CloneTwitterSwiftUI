@@ -64,6 +64,8 @@
 		84C7BEB625B59F8100C889D8 /* KeyboardObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7BEB525B59F8100C889D8 /* KeyboardObserve.swift */; };
 		84C7BEBC25B7290600C889D8 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7BEBB25B7290600C889D8 /* TextView.swift */; };
 		84C7BEC125BAEB4F00C889D8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7BEC025BAEB4E00C889D8 /* TestView.swift */; };
+		84D3549025C3F444000CF8FA /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3548F25C3F444000CF8FA /* EditProfileView.swift */; };
+		84D3549325C409C2000CF8FA /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3549225C409C2000CF8FA /* EditProfileViewModel.swift */; };
 		84DBD77425B06EE900658786 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBD77325B06EE900658786 /* TweetViewModel.swift */; };
 		84DBD77925B1F54000658786 /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 84DBD77825B1F54000658786 /* JGProgressHUD-SwiftUI */; };
 		84DC0AE3259B2F23005BB018 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC0AE2259B2F23005BB018 /* FeedView.swift */; };
@@ -125,6 +127,8 @@
 		84C7BEB525B59F8100C889D8 /* KeyboardObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserve.swift; sourceTree = "<group>"; };
 		84C7BEBB25B7290600C889D8 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		84C7BEC025BAEB4E00C889D8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		84D3548F25C3F444000CF8FA /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		84D3549225C409C2000CF8FA /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		84DBD77325B06EE900658786 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		84DC0AE2259B2F23005BB018 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		84DC0AE5259B6C5B005BB018 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 				84DBD77325B06EE900658786 /* TweetViewModel.swift */,
 				84C7BEA525B3599F00C889D8 /* ChatViewModel.swift */,
 				84C7BEB225B590F900C889D8 /* ConversationViewModel.swift */,
+				84D3549225C409C2000CF8FA /* EditProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				84178D8C259BA86100563EE6 /* UserCell.swift */,
 				841AC7BC25ACC49E00361786 /* LeftMenu.swift */,
 				841AC7BD25ACC49E00361786 /* LeftMenuTableView.swift */,
+				84D3548F25C3F444000CF8FA /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				84178DB625AAF96700563EE6 /* UserProfileView.swift in Sources */,
 				84178DAB25A7725D00563EE6 /* MessageView.swift in Sources */,
 				8458C6C725B03D620002A03E /* Extentions.swift in Sources */,
+				84D3549325C409C2000CF8FA /* EditProfileViewModel.swift in Sources */,
 				84DC0AEC259B9D7D005BB018 /* SearchBar.swift in Sources */,
 				84C7BEC125BAEB4F00C889D8 /* TestView.swift in Sources */,
 				84178DB925AAFB3700563EE6 /* ProfileHeaderView.swift in Sources */,
@@ -467,6 +474,7 @@
 				84178D99259CDA5900563EE6 /* ConversationView.swift in Sources */,
 				84178DA825A770CF00563EE6 /* Message.swift in Sources */,
 				84C7BEA625B3599F00C889D8 /* ChatViewModel.swift in Sources */,
+				84D3549025C3F444000CF8FA /* EditProfileView.swift in Sources */,
 				841AC7DF25ADEF3000361786 /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

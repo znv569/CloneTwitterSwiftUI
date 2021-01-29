@@ -14,7 +14,7 @@ struct LeftMenuTableView: View {
     @ObservedObject var authViewModel: AuthViewModel
     @State var profilePresented: Bool = false
     @Environment(\.presentationMode) var presentationMode
-    
+    @State var isPresentedEditProfile: Bool = false
     
     var body: some View {
         VStack{
@@ -50,10 +50,22 @@ struct LeftMenuTableView: View {
                 })
                
            
+               
                 
                 Spacer()
             }
             
+            Button(action: {
+                isPresentedEditProfile.toggle()
+            }, label: {
+                Text("Edit Profile")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .bold))
+            })
+            .fullScreenCover(isPresented: $isPresentedEditProfile, content: {
+                EditProfileView()
+            })
+            .padding(.vertical)
             
             Button(action: {
                 

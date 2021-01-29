@@ -22,11 +22,28 @@ class UserService {
     static let shared = UserService()
     
     
-    
+    func updateUser(_ user: User, pass: String, compleation: @escaping()->Void){
+        let value:[String: Any] = ["caption": user.caption,
+                                   "fullname": user.fullname,
+                                   "username": user.username,
+                                   "email": user.email,
+                                   "profileImageUrl": user.profileImageUrl.absoluteString]
+        
+        USERS_REF.document(user.id).updateData(value) { _ in
+            Auth.auth().currentUser?.updateEmail(to: user.email, completion: { _ in
+                if !pass.isEmpty {
+                    Auth.auth().currentUser?.updatePassword(to: pass, completion: nil)
+                }
+                  compleation()
+                
+            })
+        }
+        
+        
+    }
     
     func fetchUser(_ uid: String? = nil, compleation: @escaping(User)->Void){
         
-        print("Инициализация пользователя")
         
         var uidQuery: String? = nil
         
