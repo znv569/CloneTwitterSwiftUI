@@ -21,6 +21,7 @@ struct NewMessageView: View {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().isOpaque = true
         UINavigationBar.appearance().barStyle = .default
+        print("main")
     }
     
     var body: some View {
