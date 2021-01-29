@@ -43,10 +43,10 @@ struct NewMessageView: View {
             .navigationBarItems(trailing: Button(action: {
                 show.toggle()
             }, label: {
-                Image(systemName: "xmark")
+                Image(systemName: "xmark.circle.fill")
                     .resizable()
-                    .frame(width: 18, height: 18, alignment: .center)
-                    .foregroundColor(.black)
+                    .frame(width: 27, height: 27, alignment: .center)
+                    .foregroundColor(Color(UIColor.black.withAlphaComponent(0.75)))
             }))
         }
        
