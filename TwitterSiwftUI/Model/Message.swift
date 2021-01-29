@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 
-
+//model chat
 struct MessageMock: Identifiable {
     let id: String
     let message: String
@@ -28,7 +28,7 @@ struct MessageMock: Identifiable {
 }
 
 
-
+//model preview chats in list
 struct Chat: Identifiable {
     let id: String
     let user: User
