@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileActionButtons: View {
     
     @ObservedObject var viewModel: ProfileViewModel
-    
+    @State var isPresentedEditProfile: Bool = false
     
     
     var body: some View {
@@ -18,7 +18,9 @@ struct ProfileActionButtons: View {
        
         
         if viewModel.user.isCurrentUser {
-            Button(action: {}, label: {
+            Button(action: {
+                isPresentedEditProfile.toggle()
+            }, label: {
                 Text("Edit profile")
             })
             .frame(minWidth: 100, maxWidth: .infinity)
@@ -29,6 +31,9 @@ struct ProfileActionButtons: View {
             .background(Color.blue)
             .clipShape(Capsule())
             .padding(.horizontal)
+            .fullScreenCover(isPresented: $isPresentedEditProfile, content: {
+                EditProfileView()
+            })
             
         }else{
             HStack(spacing: 10){

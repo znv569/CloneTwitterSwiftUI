@@ -35,6 +35,20 @@ struct TextView: UIViewRepresentable {
     }()
     
     
+    func textViewColor(_ color: UIColor) -> TextView {
+        textView.textColor = color
+        return self
+    }
+    
+    func backgroundViewColor(_ color: UIColor) -> TextView {
+        textView.backgroundColor = color
+        return self
+    }
+    
+    func placeholderColor(_ color: UIColor) -> TextView {
+        placeholderLabel.textColor = color
+        return self
+    }
     
     //MARK: Methods
     
@@ -47,8 +61,12 @@ struct TextView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UITextView {
         
+        textView.text = text
         textView.delegate = context.coordinator
         textView.addSubview(placeholderLabel)
+        
+        placeholderLabel.isHidden = !text.isEmpty
+        
         
         placeholderLabel.text = placeholder
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
