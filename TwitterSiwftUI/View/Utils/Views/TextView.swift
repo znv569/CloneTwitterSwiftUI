@@ -5,6 +5,7 @@
 //  Created by Admin on 19.01.2021.
 //
 
+
 import SwiftUI
 
 
@@ -79,7 +80,7 @@ struct TextView: UIViewRepresentable {
     
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        
+        uiView.text = text
     }
     
     

@@ -65,6 +65,7 @@ struct ChatView: View {
                         messageText = ""
                     self.viewModel.sendMessage(message: forSend) {
                         //messageText = ""
+                        print(messageText)
                     }
                 })
                 .padding()

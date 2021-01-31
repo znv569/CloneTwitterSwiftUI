@@ -61,7 +61,6 @@ struct LoginView: View {
                             Text("Forgot password?")
                         })
                         .padding(.trailing, 20)
-                        
                         .foregroundColor(.white)
                     }
                     
