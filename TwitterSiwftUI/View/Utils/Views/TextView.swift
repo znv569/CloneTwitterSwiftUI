@@ -58,6 +58,10 @@ struct TextView: UIViewRepresentable {
     }
     
     
+    func calcilateSize(_ textView: UITextView){
+        let size = textView.sizeThatFits(textView.bounds.size)
+        heightText = size.height
+    }
     
     
     func makeUIView(context: Context) -> UITextView {
@@ -65,6 +69,8 @@ struct TextView: UIViewRepresentable {
         textView.text = text
         textView.delegate = context.coordinator
         textView.addSubview(placeholderLabel)
+        
+        calcilateSize(textView)
         
         placeholderLabel.isHidden = !text.isEmpty
         
@@ -99,9 +105,8 @@ struct TextView: UIViewRepresentable {
         func textViewDidChange(_ textView: UITextView) {
             
             parent.text = textView.text
-            let size = textView.sizeThatFits(textView.bounds.size)
-            parent.heightText = size.height
             parent.placeholderLabel.isHidden = !textView.text.isEmpty
+            parent.calcilateSize(textView)
             
         }
         
