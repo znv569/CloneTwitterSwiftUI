@@ -114,7 +114,7 @@ struct EditProfileView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                     
-                    TextView(text: $viewModel.caption, heightText: $heightCaption, placeholder: "Описание")
+                    TextView(text: $viewModel.caption, heightText: $heightCaption, placeholder: "Description")
                         .backgroundViewColor(.clear)
                         .placeholderColor(.init(white: 1, alpha: 0.87))
                         .textViewColor(.white)
@@ -133,6 +133,7 @@ struct EditProfileView: View {
            
         }
         .frame(maxWidth: .infinity)
+        .padding(.bottom, 10)
         .background(Color(#colorLiteral(red: 0.1076790616, green: 0.6322241426, blue: 0.9511476159, alpha: 1)).ignoresSafeArea())
         
    

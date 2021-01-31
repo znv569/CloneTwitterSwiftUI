@@ -58,7 +58,7 @@ struct TextView: UIViewRepresentable {
     }
     
     
-    func calcilateSize(_ textView: UITextView){
+    func calculateSize(_ textView: UITextView){
         let size = textView.sizeThatFits(textView.bounds.size)
         heightText = size.height
     }
@@ -70,7 +70,7 @@ struct TextView: UIViewRepresentable {
         textView.delegate = context.coordinator
         textView.addSubview(placeholderLabel)
         
-        calcilateSize(textView)
+       
         
         placeholderLabel.isHidden = !text.isEmpty
         
@@ -79,6 +79,12 @@ struct TextView: UIViewRepresentable {
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
         placeholderLabel.leftAnchor.constraint(equalTo: textView.leftAnchor, constant: 5).isActive = true
         placeholderLabel.topAnchor.constraint(equalTo: textView.topAnchor, constant: 7).isActive = true
+        
+        DispatchQueue.main.async {
+            self.calculateSize(textView)
+        }
+
+       
         
         return textView
         
@@ -106,7 +112,7 @@ struct TextView: UIViewRepresentable {
             
             parent.text = textView.text
             parent.placeholderLabel.isHidden = !textView.text.isEmpty
-            parent.calcilateSize(textView)
+            parent.calculateSize(textView)
             
         }
         
